@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_CustomerLayoutHeaderPartial")
+<body class="nav-md footer_fixed">
+    <div class="container body">
+        <div class="main_container">
+
+            @await Component.InvokeAsync("_CustomerLayoutSidebarPartial")
+            
+            <!-- top navigation -->
+            @await Component.InvokeAsync("_CustomerLayoutNavbarPartial")
+            <!-- /top navigation -->
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Fixed Footer <small> Just add class <strong>footer_fixed</strong></small></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            @await Component.InvokeAsync("_CustomerLayoutFooterPartial")
+            <!-- /footer content -->
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="~/gentela-gh-pages/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/gentela-gh-pages/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/gentela-gh-pages/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="~/gentela-gh-pages/vendors/nprogress/nprogress.js"></script>
+    <!-- jQuery custom content scroller -->
+    <script src="~/gentela-gh-pages/vendors/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="~/gentela-gh-pages/build/js/custom.min.js"></script>
+</body>
+</html>
