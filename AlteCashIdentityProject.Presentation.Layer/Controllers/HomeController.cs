@@ -1,4 +1,6 @@
-﻿using AlteCashIdentityProject.Presentation.Layer.Models;
+﻿using AlteCashIdentityProject.EntityLayer.Concrete;
+using AlteCashIdentityProject.Presentation.Layer.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,6 +8,9 @@ namespace AlteCashIdentityProject.Presentation.Layer.Controllers
 {
     public class HomeController : Controller
     {
+     
+
+
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)
