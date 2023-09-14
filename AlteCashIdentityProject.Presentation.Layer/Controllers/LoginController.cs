@@ -24,7 +24,7 @@ namespace AlteCashIdentityProject.Presentation.Layer.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(LoginViewModel loginViewModel)
         {
-            var result = await _signInManager.PasswordSignInAsync(loginViewModel.Username, loginViewModel.Password, false, true);
+            var result = await _signInManager.PasswordSignInAsync(loginViewModel.Username, loginViewModel.Password, loginViewModel.RememberMe, true);
             if (result.Succeeded)
             {
                 var user = await _userManager.FindByNameAsync(loginViewModel.Username);
@@ -32,9 +32,18 @@ namespace AlteCashIdentityProject.Presentation.Layer.Controllers
                 {
                     return RedirectToAction("Index", "MyProfile");
                 }
+                else
+                {
+                    ModelState.AddModelError("","Hesap onaylı değil!");
+                }
 
-                
+
             }
+            else
+            {
+                ModelState.AddModelError("", "Kullanıcı adı veya şifre hatalı!");
+            }
+
             return View();
         }
     }
